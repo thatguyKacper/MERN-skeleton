@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function EditProfile({ match }) {
+export default function EditProfile() {
   const classes = useStyles();
   const [values, setValues] = useState({
     name: '',
@@ -99,7 +99,7 @@ export default function EditProfile({ match }) {
   };
 
   if (values.redirectToProfile) {
-    return <Redirect to={'/user/' + values.userId} />;
+    return <Navigate to={'/user/' + values.userId} />;
   }
   return (
     <Card className={classes.card}>
